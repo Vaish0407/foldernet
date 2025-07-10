@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup><ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="9.0.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="System.Text.Json" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="VLiteCommon">
+      <HintPath>Bin\VLiteCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="VLiteConfig">
+      <HintPath>Bin\VLiteConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="VLiteHub">
+      <HintPath>Bin\VLiteHub.dll</HintPath>
+    </Reference>
+    <Reference Include="VLiteRT">
+      <HintPath>Bin\VLiteRT.dll</HintPath>
+    </Reference>
+    <Reference Include="LogicNP.CryptoLicensing">
+      <HintPath>Bin\LogicNP.CryptoLicensing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Bin\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
